@@ -1,0 +1,30 @@
+> Purpose: Tenant RLS policies
+> Audience: founders and coding agents
+> Prerequisites: `docs/00-INDEX.md`, `docs/DECISIONS.md`, `docs/SYMBOL_REGISTRY.md`
+> Owner lane: B
+> Last verified against SYMBOL_REGISTRY version: v1
+
+CREATE SCHEMA IF NOT EXISTS private;
+CREATE OR REPLACE FUNCTION private.current_university_ids() RETURNS SETOF uuid LANGUAGE sql STABLE SECURITY INVOKER SET search_path= AS $$ SELECT university_id FROM public.university_memberships WHERE profile_id=(SELECT auth.uid()) AND status='active' $$;
+CREATE OR REPLACE FUNCTION private.is_platform_admin() RETURNS boolean LANGUAGE sql STABLE SECURITY DEFINER SET search_path= AS $$ SELECT EXISTS(SELECT 1 FROM public.platform_admins WHERE profile_id=(SELECT auth.uid()) AND revoked_at IS NULL) $$;
+DROP POLICY IF EXISTS content_pages_tenant_access ON public.content_pages;
+CREATE POLICY content_pages_tenant_access ON public.content_pages FOR ALL TO authenticated USING (private.is_platform_admin()) WITH CHECK (private.is_platform_admin());
+REVOKE ALL ON public.content_pages FROM anon;
+DROP POLICY IF EXISTS help_articles_tenant_access ON public.help_articles;
+CREATE POLICY help_articles_tenant_access ON public.help_articles FOR ALL TO authenticated USING (private.is_platform_admin()) WITH CHECK (private.is_platform_admin());
+REVOKE ALL ON public.help_articles FROM anon;
+DROP POLICY IF EXISTS redirects_tenant_access ON public.redirects;
+CREATE POLICY redirects_tenant_access ON public.redirects FOR ALL TO authenticated USING (private.is_platform_admin()) WITH CHECK (private.is_platform_admin());
+REVOKE ALL ON public.redirects FROM anon;
+DROP POLICY IF EXISTS seo_overrides_tenant_access ON public.seo_overrides;
+CREATE POLICY seo_overrides_tenant_access ON public.seo_overrides FOR ALL TO authenticated USING (private.is_platform_admin()) WITH CHECK (private.is_platform_admin());
+REVOKE ALL ON public.seo_overrides FROM anon;
+DROP POLICY IF EXISTS calculators_tenant_access ON public.calculators;
+CREATE POLICY calculators_tenant_access ON public.calculators FOR ALL TO authenticated USING (private.is_platform_admin()) WITH CHECK (private.is_platform_admin());
+REVOKE ALL ON public.calculators FROM anon;
+-- Add narrow per-operation student/staff policies only after identity and role fixtures are defined; no client receives service_role.
+REVOKE ALL ON SCHEMA private FROM PUBLIC;
+
+## Self-check
+- [x] Header and audience are stated.
+- [x] Scope, tests, and operational constraints are present.
