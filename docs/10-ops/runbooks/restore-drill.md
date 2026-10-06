@@ -6,7 +6,7 @@
 
 # Restore Drill Runbook
 
-Quarterly restore a production backup/PITR snapshot into an isolated recovery project. Restrict access and use synthetic validation. Record restore point, duration, schema version and data loss window. Verify login-independent DB health, table counts, RLS policies, indexes, key RPCs, outbox integrity and immutable ledger sums. Do not route traffic until both founders approve. Delete isolated restore securely after signoff and update recovery time/objectives.
+Quarterly restore a production backup snapshot into an isolated recovery project. Restrict access and use synthetic validation. Record restore point, duration, schema version and data loss window. Verify login-independent DB health, table counts, RLS policies, indexes, key RPCs, outbox integrity and immutable ledger sums. Do not route traffic until both founders approve. Delete isolated restore securely after signoff and update recovery time/objectives.
 
 ## Self-check
 - [x] Header and required content are present.

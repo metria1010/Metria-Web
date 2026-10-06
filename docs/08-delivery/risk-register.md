@@ -16,7 +16,7 @@
 | R6 | University-name/affiliation risk | disclaimer, no logos, configurable product name | B |
 | R7 | Bot traffic/ad fraud | filtering, no raw IP, rate limits, no self-click policy, provider terms | B |
 | R8 | Consent/legal noncompliance | consent gate, generated provider list, legal review | B |
-| R9 | Free tier/provider terms unsuitable | paid commercial Vercel/Supabase production baseline; verify current terms, upgrade thresholds | Shared |
+| R9 | Free-tier/provider limits exceeded or free tier unsuitable | Stay within free-tier limits (DB size/egress/connections); monitor usage, optimize/archive before any capacity change; verify current free-tier terms | Shared |
 | R10 | Marks altered incorrectly | append-only mark history, explicit CSV preview/confirm, staff RLS, audit | A |
 | R11 | Two-founder bus factor | business-owned accounts, secrets inventory, runbooks, recovery drills | Shared |
 | R12 | Payout disputes | immutable close, visible calculations, terms, compensating adjustments | B |

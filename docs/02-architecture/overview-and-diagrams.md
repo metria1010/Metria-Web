@@ -8,7 +8,7 @@
 
 ```mermaid
 flowchart LR
-Browser --> Next[Next.js App Router on Vercel]
+Browser --> Next[Next.js App Router]
 Next --> Auth[Supabase Auth: Google OAuth]
 Next --> DB[(Supabase Postgres + RLS)]
 Next --> Public[Whitelisted public views/functions]

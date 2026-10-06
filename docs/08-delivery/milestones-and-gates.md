@@ -9,7 +9,7 @@
 | Phase | Gate | Required evidence |
 |---|---|---|
 | P0 Foundation | Both founders sign off | Repo/tooling/CI, local Supabase, auth tenant skeleton, RLS helpers, seeds, registry, test harness, business accounts, design tokens |
-| P1 Launch | Both lanes pass | auth, academics/marks, booking base, objections, public SEO/legal/calculators, ads config/safety, admin basics, noindex/private boundary, commercial tiers/legal review, runbooks |
+| P1 Launch | Both lanes pass | auth, academics/marks, booking base, objections, public SEO/legal/calculators, ads config/safety, admin basics, noindex/private boundary, free-tier limits/legal review, runbooks |
 | P2 Expansion | Both lanes pass | messaging/coursework/calendar, social booking/waitlist, notification channels, visits/revenue/payouts, reviews/TA pages, tools/chatbot/share loops, moderation |
 | P3 Delayed | Explicit enable review | free/busy, ephemeral eligibility, AI chatbot quota/tool boundary, teacher reviews last after legal review and feature flag |
 

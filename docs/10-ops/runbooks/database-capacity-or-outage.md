@@ -6,7 +6,7 @@
 
 # Database Capacity or Outage Runbook
 
-Check provider status, connection pool, storage, egress and slow-query dashboard. Pause noncritical aggregation jobs; do not disable RLS or remove constraints. Preserve queue and incoming requests. Scale paid tier/compute if threshold crossed. Validate backup/PITR point before recovery. Run health checks, booking/import atomicity smoke tests and cross-tenant check after service returns. Record mitigation and follow-up index/query work.
+Check provider status, connection pool, storage, egress and slow-query dashboard. Pause noncritical aggregation jobs; do not disable RLS or remove constraints. Preserve queue and incoming requests. Optimize queries, indexes and pooling to stay within free-tier thresholds. Validate backup point before recovery. Run health checks, booking/import atomicity smoke tests and cross-tenant check after service returns. Record mitigation and follow-up index/query work.
 
 ## Self-check
 - [x] Header and required content are present.

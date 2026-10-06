@@ -18,8 +18,8 @@
 - [ ] Marks/history/audit atomic; payouts and allocations immutable.
 - [ ] Calendar tokens hashed, revocable and owner-scoped.
 - [ ] Transcript parser has verified zero network requests and no persistent storage.
-- [ ] Backup/PITR enabled, restore drill completed, secrets inventory verified.
-- [ ] Provider terms, commercial service tiers, privacy/legal terms reviewed at execution time.
+- [ ] Backups enabled within free-tier plan, restore drill completed, secrets inventory verified.
+- [ ] Provider terms, free-tier service limits, privacy/legal terms reviewed at execution time.
 
 ## Self-check
 - [x] Header and audience are stated.

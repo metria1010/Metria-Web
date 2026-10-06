@@ -7,7 +7,7 @@
 # Decision Log v1
 
 ## Authority and locked decisions
-Supabase/Postgres/Auth/Realtime/Storage only when unavoidable; Next.js App Router, TypeScript strict, Tailwind, shadcn/ui, Vercel; no ORM; migrations via Supabase CLI only; modular monolith; Google sign-in with server-enforced allowed domains; RLS on every table; integer minor units and ISO currency; UTC timestamps and Asia/Karachi display default; business-owned service accounts; Vitest, Playwright, pgTAP, CI per PR; English UI scaffolded with next-intl.
+Supabase/Postgres/Auth/Realtime/Storage only when unavoidable; Next.js App Router, TypeScript strict, Tailwind, shadcn/ui; no ORM; migrations via Supabase CLI only; modular monolith; Google sign-in with server-enforced allowed domains; RLS on every table; integer minor units and ISO currency; UTC timestamps and Asia/Karachi display default; business-owned service accounts; Vitest, Playwright, pgTAP, CI per PR; English UI scaffolded with next-intl. Deployment and all services are free-tier only; no Vercel; no paid plans.
 
 ## Applied defaults
 | ID | Decision | Application |
@@ -29,7 +29,7 @@ Supabase/Postgres/Auth/Realtime/Storage only when unavoidable; Next.js App Route
 | D15 | 50% attributable TA pool | Must be stated in terms before revenue activation. |
 | D16 | PKR 2,000 payout minimum | Configurable by platform admin. |
 | D17 | Postgres counters and Edge limits | Apply to writes, auth-adjacent, chat, link uploads and AI. |
-| D18 | local/staging/production | Separate Supabase projects; staging Vercel preview. |
+| D18 | local/staging/production | Separate Supabase projects; staging preview deployment on the chosen free hosting target. |
 | D19 | Realtime with polling fallback | RLS-correct channels. |
 | D20 | One-time SQL bootstrap using BOOTSTRAP_ADMIN_EMAIL | Idempotent, audited, run once by authorized operator. |
 | D21 | WCAG 2.1 AA | Core flows release gate. |
@@ -41,7 +41,7 @@ Supabase/Postgres/Auth/Realtime/Storage only when unavoidable; Next.js App Route
 - ADR-003: calendar subscriptions use high-entropy revocable bearer tokens stored as hashes; response contains only the owner's calendar.
 - ADR-004: private pages initially allow configurable ads but sensitive-value reveal and per-page `isolation_mode` support `iframe_only` and `no_script_ads`; platform may disable scripts immediately. Follow legal/provider terms.
 - ADR-005: consent defaults are region-aware and conservative; obtain qualified legal review before production.
-- ADR-006: Vercel commercial paid tier and Supabase production tier with PITR/backups are launch prerequisites; verify current terms and pricing at execution.
+- ADR-006: Hosting and database run on free tiers only (no Vercel, no paid plans); backups enabled where the free plan allows; monitor free-tier limits and verify current limits/terms at execution.
 - ADR-007: schema support tables explicitly registered include `course_meetings`, `consent_records`, `objection_rate_limits`, and `ad_impressions`; each has tenant and RLS treatment.
 - ADR-008: placement IDs and provider script identifiers are data; trusted script URL allowlists remain code-controlled to prevent arbitrary script injection.
 

@@ -14,10 +14,10 @@
 - [ ] Deletion, moderation, report, appeal, privacy and non-affiliation flows reviewed.
 
 ## Reliability
-- [ ] PITR/backups enabled and restore drill recorded.
+- [ ] Backups enabled (within free-tier plan) and restore drill recorded.
 - [ ] Sentry, uptime, queue/DLQ, database capacity and CWV alerts routed to both founders.
 - [ ] Login, ads, DB and email runbooks rehearsed.
-- [ ] Paid service tiers and current provider terms verified.
+- [ ] Free-tier service limits and current provider terms verified.
 
 ## Ads and SEO
 - [ ] Consent gating and network listing verified.

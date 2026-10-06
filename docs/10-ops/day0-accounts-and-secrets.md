@@ -6,11 +6,11 @@
 
 # Day 0 Accounts and Secrets
 
-Create company-owned Google Workspace/account, GitHub Organization, Vercel team, Supabase organization, domain registrar/DNS, Search Console, analytics property, Sentry, Resend, ad publisher accounts, and payout/banking access under business identity. At least two founders have recovery access; enforce MFA and recovery codes in company vault. Do not use personal accounts as sole owner.
+Create company-owned Google account, GitHub Organization, Supabase organization, domain registrar/DNS, Search Console, analytics property, Sentry, Resend, ad publisher accounts, and payout/banking access under business identity. At least two founders have recovery access; enforce MFA and recovery codes in company vault. Do not use personal accounts as sole owner. All services use free tiers; no paid plans.
 
-Inventory secrets by name, owner, environment, rotation date and recovery path: Supabase anon URL/key (public), service-role key (server only), DB URL, bootstrap admin email, Resend key, Sentry DSN, VAPID keys, cron secret, analytics ID, consent policy version, ad provider credentials. Store in Vercel/Supabase vault/password manager; `.env.example` contains placeholders only. Rotate on personnel change or suspected exposure.
+Inventory secrets by name, owner, environment, rotation date and recovery path: Supabase anon URL/key (public), service-role key (server only), DB URL, bootstrap admin email, Resend key, Sentry DSN, VAPID keys, cron secret, analytics ID, consent policy version, ad provider credentials. Store in a password manager / secrets vault; `.env.example` contains placeholders only. Rotate on personnel change or suspected exposure.
 
-Before production: verify provider current commercial terms and privacy terms; provision paid Vercel commercial and Supabase production with PITR/backups; configure Google OAuth origins/redirects/domain hook; DNS SPF/DKIM/DMARC; Sentry scrubbers; uptime monitor; consent policy; ad category blocks; domain ownership; restore drill. Bootstrap first platform admin once with `BOOTSTRAP_ADMIN_EMAIL`, record actor/time and verify second founder recovery.
+Before production: verify provider current free-tier terms and privacy terms; confirm free-tier quotas cover expected load (DB size, egress, connections, backups where available); configure Google OAuth origins/redirects/domain hook; DNS SPF/DKIM/DMARC; Sentry scrubbers; uptime monitor; consent policy; ad category blocks; domain ownership; restore drill. Bootstrap first platform admin once with `BOOTSTRAP_ADMIN_EMAIL`, record actor/time and verify second founder recovery.
 
 ## Self-check
 - [x] Header and required content are present.
